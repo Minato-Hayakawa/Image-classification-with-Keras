@@ -7,3 +7,5 @@ data_dir = pathlib.Path('C:/vscode/python/Keras2/Image classification with Keras
 batch_size = 32
 img_height = 180
 img_width = 180
+
+classes=['red panda','raccoon']
