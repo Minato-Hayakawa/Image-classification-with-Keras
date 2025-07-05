@@ -23,9 +23,8 @@ val_ds = tf.keras.utils.image_dataset_from_directory(
   seed=123,
   image_size=(img_height, img_width),
   batch_size=batch_size)
-classes=['red panda','raccoon']
 
-num_classes = 5
+num_classes = 2
 
 model = tf.keras.Sequential([
   tf.keras.layers.Rescaling(1./255),
