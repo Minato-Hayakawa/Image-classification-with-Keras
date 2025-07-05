@@ -28,7 +28,7 @@ val_ds = tf.keras.utils.image_dataset_from_directory(
 
 predict_ds= tf.keras.utils.image_dataset_from_directory(
   newdata_dir,
-  subset="validation"
+  subset="validation",
   seed=123,
   image_size=(img_height,img_width),
   batch_size=batch_size
@@ -56,4 +56,7 @@ model.fit(
   train_ds,
   validation_data=val_ds,
   epochs=15
+)
+model.predict(
+  predict_ds,
 )
