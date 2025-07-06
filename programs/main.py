@@ -60,3 +60,4 @@ model.fit(
 model.predict(
   predict_ds,
 )
+model.save('raccoon_redpanda.h5')
