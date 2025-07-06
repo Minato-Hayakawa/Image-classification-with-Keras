@@ -26,14 +26,6 @@ val_ds = tf.keras.utils.image_dataset_from_directory(
   image_size=(img_height, img_width),
   batch_size=batch_size)
 
-predict_ds= tf.keras.utils.image_dataset_from_directory(
-  newdata_dir,
-  subset="validation",
-  seed=123,
-  image_size=(img_height,img_width),
-  batch_size=batch_size
-)
-
 num_classes = 2
 
 model = tf.keras.Sequential([
@@ -56,8 +48,5 @@ model.fit(
   train_ds,
   validation_data=val_ds,
   epochs=15
-)
-model.predict(
-  predict_ds,
 )
 model.save('raccoon_redpanda.h5')
