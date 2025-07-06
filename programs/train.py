@@ -49,4 +49,4 @@ model.fit(
   validation_data=val_ds,
   epochs=15
 )
-model.save('raccoon_redpanda.h5')
+model.save("raccoon_redpanda.h5")
