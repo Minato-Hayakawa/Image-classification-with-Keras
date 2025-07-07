@@ -7,10 +7,12 @@ import pathlib
 data_dir=pathlib.Path('Input Picture Path')
 img_hight=180
 img_width=180
-model = tf.models.load_model('raccoon_redpanda.h5')
 
 predict_ds=tf.keras.utils.image_dataset_from_directory(
     data_dir,
-    subset="validation"
-    
+    subset="validation",
+    image_size=(img_hight,img_width),
+    batch_size=4
 )
+
+model = tf.models.load_model('raccoon_redpanda.h5')
