@@ -5,4 +5,4 @@ import tensorflow as tf
 import pathlib
 
 data_dir=pathlib.Path('Input Picture Path')
-new_model = tf.models.load_model('path_to_my_model.h5')
+new_model = tf.models.load_model('raccoon_redpanda.h5')
