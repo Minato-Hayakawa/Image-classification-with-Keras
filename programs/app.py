@@ -18,3 +18,5 @@ class_names = predict_ds.class_names
 
 model = tf.models.load_model('raccoon_redpanda.h5')
 prediction=model.predict(predict_ds)
+
+print("image classification with Keras")
