@@ -20,3 +20,8 @@ model = tf.models.load_model('raccoon_redpanda.h5')
 prediction=model.predict(predict_ds)
 
 print("image classification with Keras")
+
+if(prediction[0]==0):
+    print("This image is raccoon")
+elif(prediction[0]==1):
+    print("This image is red panda")
