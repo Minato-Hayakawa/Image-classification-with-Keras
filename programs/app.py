@@ -17,4 +17,4 @@ predict_ds=tf.keras.utils.image_dataset_from_directory(
 class_names = predict_ds.class_names
 
 model = tf.models.load_model('raccoon_redpanda.h5')
-model.predict(predict_ds)
+prediction=model.predict(predict_ds)
