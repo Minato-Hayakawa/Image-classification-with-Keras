@@ -17,7 +17,7 @@ class_names = predict_ds.class_names
 
 model = tf.models.load_model('raccoon_redpanda.h5')
 prediction=model.predict(predict_ds)
-score=tf.keras.layers.softmax(prediction)*100
-ptrdicted_class_names=class_names[np.argmax(prediction[0])]
-print("This image was considered"+ptrdicted_class_names)
+score=tf.keras.nn.softmax(prediction[0])*100
+predicted_class_names=class_names[np.argmax(prediction[0])]
+print("This image was considered"+predicted_class_names)
 print("reliability="+score)
