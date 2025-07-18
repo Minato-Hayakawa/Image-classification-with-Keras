@@ -1,5 +1,4 @@
 import numpy as np
-import PIL
 import tensorflow as tf
 import pathlib
 data_dir = pathlib.Path('C:/vscode/python/Keras2/Image classification with Keras/images')
