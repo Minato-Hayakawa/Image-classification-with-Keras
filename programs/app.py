@@ -14,7 +14,7 @@ predict_ds=tf.keras.utils.image_dataset_from_directory(
 )
 class_names = ["raccoon","red panda"]
 
-model = tf.models.load_model('raccoon_redpanda.h5')
+model = tf.keras.models.load_model('C:/vscode/python/Keras2/Image classification with Keras/model/raccoon_redpanda.h5')
 prediction=model.predict(predict_ds)  
 for i,prediction_array in enumerate(prediction):
     predicted_index_classes=np.argmax(prediction_array)
