@@ -7,6 +7,7 @@ img_hight=180
 img_width=180
 predict_ds=tf.keras.utils.image_dataset_from_directory(
     data_dir,
+    labels='none',
     batch_size=4,
     image_size=(img_hight,img_width),
 )
