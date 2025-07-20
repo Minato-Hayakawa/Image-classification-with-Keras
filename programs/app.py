@@ -7,18 +7,17 @@ img_hight=180
 img_width=180
 predict_ds=tf.keras.utils.image_dataset_from_directory(
     data_dir,
-    labels='none',
+    labels=None,
     batch_size=4,
     image_size=(img_hight,img_width),
+    shuffle=False
 )
 class_names = ["raccoon","red panda"]
 
 model = tf.models.load_model('raccoon_redpanda.h5')
 prediction=model.predict(predict_ds)  
-raccoon_reliability=prediction[0].max
-redpanda_reliability=prediction[1].max
-for i in range(prediction[0].shape):
-    if prediction[i][0]>prediction[i][1]:
-        print("This image was predicted as raccoon reliability="+prediction[i][0])
-    elif prediction[i][0]<prediction[i][1]:
-        print("This image was predicted as red panda reliability="+prediction[i][0])
+for i,prediction_array in enumerate(prediction):
+    predicted_index_classes=np.argmax(prediction_array)
+    predicted_class_names=class_names[predicted_index_classes]
+    reliability=prediction_array[predicted_index_classes]
+    print(i+1+"番目の画像は"+predicted_class_names+"です。信頼度="+reliability)
