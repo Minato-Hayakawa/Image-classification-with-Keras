@@ -20,4 +20,4 @@ for i,prediction_array in enumerate(prediction):
     predicted_index_classes=np.argmax(prediction_array)
     predicted_class_names=class_names[predicted_index_classes]
     reliability=prediction_array[predicted_index_classes]
-    print(i+1+"番目の画像は"+predicted_class_names+"です。信頼度="+reliability)
+    print(f"{i+1}番目の画像は{predicted_class_names}です。信頼度={reliability:.4f}")
