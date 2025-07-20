@@ -19,5 +19,5 @@ prediction=model.predict(predict_ds)
 for i,prediction_array in enumerate(prediction):
     predicted_index_classes=np.argmax(prediction_array)
     predicted_class_names=class_names[predicted_index_classes]
-    reliability=prediction_array[predicted_index_classes]
-    print(f"{i+1}番目の画像は{predicted_class_names}です。信頼度={reliability:.4f}")
+    reliability=prediction_array[predicted_index_classes]*100
+    print(f"{i+1}番目の画像は{predicted_class_names}です。信頼度={reliability:.4f}%")
